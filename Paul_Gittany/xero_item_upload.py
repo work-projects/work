@@ -20,7 +20,7 @@ try:
     time.sleep(5)
     driver.get('https://go.xero.com/Accounts/Inventory')
     print ' In inventory'
-    for i in range(2,3381):
+    for i in range(1,3160):
         print sheet.cell(column=1, row=i).value
         while True:
             try:
@@ -42,12 +42,13 @@ try:
 #                 break
 #             except Exception,e:
 #                 pass
-        driver.find_element_by_name('PurchasesDescription').send_keys(sheet.cell(column=3, row=i).value)
+        description = sheet.cell(column=3, row=i).value
+        driver.find_element_by_name('PurchasesDescription').send_keys(description)
         driver.find_element_by_name('SalesUnitPrice').send_keys(str(sheet.cell(column=8, row=i).value))
         driver.find_element_by_name('SalesAccountID').send_keys(sheet.cell(column=9, row=i).value)
         driver.find_element_by_name('SalesAccountID').send_keys(Keys.RETURN)
         #driver.find_element_by_xpath(".//li[text()='Revenue']/../li[@class='x-boundlist-item']").click()
-        driver.find_element_by_name('SalesDescription').send_keys(sheet.cell(column=7, row=i).value)
+        driver.find_element_by_name('SalesDescription').send_keys(description)
         driver.find_element_by_name('SalesDescription').send_keys(Keys.TAB)
         driver.find_element_by_xpath('//*[text()="Save"]').send_keys(Keys.RETURN)
     
@@ -56,9 +57,7 @@ try:
                 driver.find_element_by_id('inventoryitem-popup-body')
             except Exception, e:
                 #print e
-                break
-    
-    
+                break    
     time.sleep(2)
 
 except Exception,e:
