@@ -14,16 +14,7 @@ file_store_list = open('file_store_list.txt','w')
 url = "https://www.aliexpress.com/wholesale"
 
 file_product_ids = open('file_product_ids.txt','r').read().split('\n')
-headers = {
-    'accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-    'accept-encoding': "gzip, deflate, sdch, br",
-    'accept-language': "en-US,en;q=0.8",
-    'cache-control': "no-cache",
-    'cookie': "ali_apache_id=10.181.239.78.1493451988691.618488.7; xman_t=Eq7QY+EMFCUQ7beOxMIy5qCYUehuqb9CeKFgDzvLF/sjAXEjHBnLgHUsywMo7FMv; acs_usuc_t=acs_rt=04c36552a07749878b60970686f421fa; xman_f=9aScyedMkVWgiJliGyYcw5moakrD2bSmYFGX/RwJT4WnJEyLN8YRcxkUmY3Wr41uYAS3fPac0wVcqxx7wDRx3JBSB2sPWJDBT5dmaRFqOfY0d4rlwQwqWw==; ali_beacon_id=10.181.239.78.1493451988691.618488.7; cna=895bEevlzkACAWfPCpIulBPu; JSESSIONID=3510944EB7A0472631380B32E46C06CC; _mle_tmp0=eNrz4A12DQ729PeL9%2FV3cfUx8KvOTLFSMjY1NLA0MXF1Mnc0MDE3MjM2NLYwcDI2cjUxczYwc3ZW0kkusTI0sTQ2MTUyMjY3MbDQSUxGE8itsDKojQIAh2YXfw%3D%3D; aep_history=keywords%5E%0Akeywords%09%0A%0Aproduct_selloffer%5E%0Aproduct_selloffer%0932721349215; _ga=GA1.2.1306089451.1493451992; xman_us_f=x_l=1&x_locale=en_US; intl_locale=en_US; intl_common_forever=1v4pISpgwB8NhHVbjUkRTtaQqEg04wPE3BAijibAD+EVEV9YNQiRiA==; _gat=1; aep_usuc_f=site=glo&region=US&b_locale=en_US&c_tp=USD; l=AhMTT8iyUxEZ6nvwM2SG5hynI509yKeK; isg=AqurfvhpdvZs16tx63l5rGHlOs_-tb9CGUoF8h0oh-pBvMsepZBPkkkeMEso; ali_apache_track=; ali_apache_tracktmp=",
-    'referer': "https://www.aliexpress.com/item/12-Constellations-Bracelet-2016-New-Fashion-Jewelry-Leather-Bracelet-Men-Casual-Personality-Alloy-Vintage-Punk-Bracelet/32721349215.html",
-    'upgrade-insecure-requests': "1",
-    'user-agent': "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"
-    }
+
 current_count = 1
 for product in file_product_ids:
     print 'Count : '+str(current_count)
@@ -67,28 +58,7 @@ for product in file_product_ids:
         shipping_options = []
         product_handle = ''
         time_scraped = ''
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         pq = PyQuery(response.text)
         
         
